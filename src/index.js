@@ -12,12 +12,10 @@ class Rotator {
         canvas = document.createElement('canvas'),
         ctx = canvas.getContext("2d");
 
-        console.log("sourceBase64:");
-        console.log(sourceBase64);
         // set proper canvas dimensions before transform & export
         canvas.width = width;
         canvas.height = height;
-        console.log("srcOrientation:" + srcOrientation)
+
         // transform context before drawing image
         switch (srcOrientation) {
             case 2: ctx.transform(-1, 0, 0, 1, width, 0); ctx.translate(width, 0); ctx.scale(-1, 1); break;

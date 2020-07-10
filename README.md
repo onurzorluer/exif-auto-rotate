@@ -1,4 +1,4 @@
-# React Exif Auto Rotate
+# Exif Auto Rotate
 
 [![Build Status](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)
 

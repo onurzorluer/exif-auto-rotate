@@ -1,6 +1,6 @@
 {
   "name": "exif-auto-rotate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Module that rerotate local images.It resets orientation of image. It returns of new image's base64 URI or Blob. The URI can be used as the source of an <Image> component.",
   "main": "build/index.js",
   "types": "./index.d.ts",
