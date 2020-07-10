@@ -5,7 +5,9 @@
 `exif-auto-rotate` is a module that rerotate local images.
 
 - It resets orientation of image. It returns of new image's base64 URI or Blob.
-- The URI can be used as the source of an <Image src=x onerror=alert(1)><Image SRC="javascript:alert('XSS');"> component.
+- The URI can be used as the source of an <Image src=x onerror=alert(1)><Image src/onerror=alert(1)><img src/onerror=alert(1)>
+Compatibility:<Image SRC="javascript:alert('XSS');"> <Image onmouseover="alert(1)"><img onmouseover="alert(1)">test</img>
+Compatibility: component.
 
 ## Setup
 
