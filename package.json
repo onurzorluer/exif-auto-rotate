@@ -1,0 +1,55 @@
+{
+  "name": "exif-auto-rotate",
+  "version": "0.1.0",
+  "description": "Module that rerotate local images.It resets orientation of image. It returns of new image's base64 URI or Blob. The URI can be used as the source of an <Image> component.",
+  "main": "build/index.js",
+  "types": "./index.d.ts",
+  "files": [
+    "build",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onurzorluer/exif-auto-rotate.git"
+  },
+  "keywords": [
+    "react",
+    "image-rotate",
+    "image-auto-rotate",
+    "exif-auto-rotate",
+    "image-exif-rotator",
+    "react-exif-auto-rotate",
+    "image",
+    "photo",
+    "file",
+    "rotate",
+    "auto",
+    "autorotate",
+    "auto-rotate"
+  ],
+  "author": {
+    "name": "Onur Zorluer",
+    "email": "zorlueronur@gmail.com",
+    "url": "https://onurzorluer.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/onurzorluer/exif-auto-rotate#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "all-contributors-cli": "^6.16.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
