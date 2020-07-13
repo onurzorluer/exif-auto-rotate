@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)
 
-`exif-auto-rotate` is a module that rerotate local images.
+`exif-auto-rotate` is a module that helps you rotate photos automatically, based on its EXIF tag. It applies the right orientation to a JPEG image.
 
-- It resets orientation of image. It returns of new image's base64 URI or Blob.
+- Resets to orientation 1 from all orientation codes. It returns of new image's base64 URI or Blob.
 - The URI can be used as the source of an `<Image>` component.
 
 ## Setup

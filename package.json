@@ -1,7 +1,7 @@
 {
   "name": "exif-auto-rotate",
-  "version": "0.1.2",
-  "description": "Module that rerotate local images.It resets orientation of image. It returns of new image's base64 URI or Blob. The URI can be used as the source of an <Image> component.",
+  "version": "0.1.3",
+  "description": "exif-auto-rotate is a module that helps you rotate photos automatically, based on its EXIF tag. It applies the right orientation to a JPEG image. Resets to orientation 1 from all orientation codes. It returns of new image's base64 URI or Blob.",
   "main": "build/index.js",
   "types": "./index.d.ts",
   "files": [
@@ -25,9 +25,13 @@
     "react-exif-auto-rotate",
     "image",
     "photo",
+    "jpeg",
     "file",
     "rotate",
     "auto",
+    "jpeg-rotate",
+    "jpeg-autorotate",
+    "jpeg-auto-rotate",
     "autorotate",
     "auto-rotate"
   ],
