@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)
 
-`exif-auto-rotate` is a module that helps you rotate photos automatically, based on its EXIF tag. It applies the right orientation to a JPEG image.
+`exif-auto-rotate` is a React module that helps you rotate photos automatically, based on its EXIF tag. It applies the right orientation to a JPEG image.
 
 - Resets to orientation 1 from all orientation codes. It returns of new image's base64 URI or Blob.
 - The URI can be used as the source of an `<Image>` component.
@@ -84,3 +84,9 @@ Option | Description | Type | Required
 ## Contributors
 
 Contributions of any kind welcome!
+
+## Support
+
+Any support is deeply appreciated. Buy me a coffee! 
+
+You can send BTC to the following address: `1J64fmsnLjMoFYmfGC9yVTfjvqpnBx7qhC`
