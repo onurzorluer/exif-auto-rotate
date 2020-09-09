@@ -19,10 +19,13 @@
   "keywords": [
     "react",
     "image-rotate",
+    "react-image-rotate",
     "image-auto-rotate",
+    "react-image-auto-rotate",
     "exif-auto-rotate",
     "image-exif-rotator",
     "react-exif-auto-rotate",
+    "react-exif",
     "image",
     "photo",
     "jpeg",

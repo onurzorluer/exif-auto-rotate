@@ -29,45 +29,25 @@ Rotator.imageFileRotator(
     responseUriFunc,  // is the callBack function of the new image URI
     );
 ```
-
-## Example
-
+## Example 
+First, wrap this resizer:
 ```javascript
-import React, { Component } from 'react';
-import Rotator from 'exif-auto-rotate';
-
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.fileChangedHandler = this.fileChangedHandler.bind(this);
+const autoRotateFile = (file) => new Promise(resolve => {
+    Rotator.imageFileRotator(file, 'JPEG',
+    uri => {
+      resolve(uri);
     }
+    );
+});
+```
 
-    fileChangedHandler(event) {
-        var fileInput = false
-        if(event.target.files[0]) {
-            fileInput = true
-        }
-        if(fileInput) {
-            Rotator.imageFileRotator(
-                event.target.files[0],
-                'base64',
-                uri => {
-                    console.log(uri)
-                },
-            );
-        }
-    }
-
-    render() {
-        return (
-            <div className="App">
-                <input type="file" onChange={this.fileChangedHandler}/>
-            </div>
-        );
-    }
+And then use it in your async function:
+```javascript
+const onChange = async (event) => {
+  const file = event.target.files[0];
+  const image = await autoRotateFile(file);
+  console.log(image);
 }
-
-export default App;
 ```
 
 Option | Description | Type | Required
