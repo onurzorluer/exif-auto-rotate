@@ -33,7 +33,7 @@ Rotator.imageFileRotator(
 First, wrap this resizer:
 ```javascript
 const autoRotateFile = (file) => new Promise(resolve => {
-    Rotator.imageFileRotator(file, 'JPEG',
+    Rotator.imageFileRotator(file, 'base64',
     uri => {
       resolve(uri);
     }
