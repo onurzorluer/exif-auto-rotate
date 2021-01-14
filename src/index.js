@@ -38,7 +38,7 @@ class Rotator {
         var contentType = 'image/jpeg';
         var sliceSize = 512;
     
-        var byteCharacters = atob(b64Data.toString().replace(/^data:image\/(png|jpeg|jpg);base64,/, ''));
+        var byteCharacters = atob(b64Data.toString().replace(/^data:image\/(jpeg|jpg);base64,/, ''));
         var byteArrays = [];
     
         for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
@@ -99,39 +99,43 @@ class Rotator {
         var blob = null
         var rotatedDataUrl = null
         const reader = new FileReader();
-        if(file) {           
-            reader.readAsDataURL(file);
-            reader.onload = () => {
-                var image = new Image();
-                image.src = reader.result;
-                image.onload = function () {
-                    Rotator.getOrientation(file, function (orientation) {
-                        console.log("Orientation: " + orientation)
-                        rotatorFunction(orientation, image);
-                    });
+        if(file) {
+            if(file.type && !file.type.includes("image")) {
+                throw Error("File Is NOT Image!");
+              } else {           
+                reader.readAsDataURL(file);
+                reader.onload = () => {
+                    var image = new Image();
+                    image.src = reader.result;
+                    image.onload = function () {
+                        Rotator.getOrientation(file, function (orientation) {
+                            rotatorFunction(orientation, image);
+                        });
+                    }; 
+                function rotatorFunction(imageOrientation, image) {
+                    if(imageOrientation == -2) {
+                        throw Error("Image Is NOT JPEG!");
+                    } else if(imageOrientation == -1) {
+                        throw Error("Not Defined!");
+                    }
+                    rotatedDataUrl = Rotator.rotateImage(image, imageOrientation);
+                    blob = Rotator.b64toBlob(rotatedDataUrl);
+                    outputType === 'blob' ?
+                        responseUriFunc(blob)
+                        :
+                        responseUriFunc(rotatedDataUrl)
+                    }   
+                };
+                reader.onerror = error => {
+                    throw Error(error);
                 }; 
-            function rotatorFunction(imageOrientation, image) {
-                console.log("NEWImageorientation: " + imageOrientation)
-                if(imageOrientation == -2) {
-                    console.log('Not JPEG')
-                } else if(imageOrientation == -1) {
-                    console.log('Not Defined')
-                }
-                rotatedDataUrl = Rotator.rotateImage(image, imageOrientation);
-                console.log("rotatedDataUrl: " +rotatedDataUrl)
-                 blob = Rotator.b64toBlob(rotatedDataUrl);
-                 outputType === 'blob' ?
-                     responseUriFunc(blob)
-                     :
-                     responseUriFunc(rotatedDataUrl)
-                }   
-            };
-            reader.onerror = error => {
-            responseUriFunc(error)
-            };
-        } else {responseUriFunc('File Not Found')}
+            }
+        } else {
+            throw Error("File Not Found!");
+          }
     }
 }   
+
 export default { createRotatedImage: (file, outputType, responseUriFunc) => {
         return Rotator.createRotatedImage(file, outputType, responseUriFunc)
     } 

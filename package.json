@@ -1,7 +1,7 @@
 {
   "name": "exif-auto-rotate",
-  "version": "0.1.3",
-  "description": "exif-auto-rotate is a React module that helps you rotate photos automatically, based on its EXIF tag. It applies the right orientation to a JPEG image. Resets to orientation 1 from all orientation codes. It returns of new image's base64 URI or Blob.",
+  "version": "0.2.0",
+  "description": "`exif-auto-rotate` is a module that helps you for applying the right orientation to JPEG images, based on its EXIF tag, automatically. It applies the right orientation to a JPEG image. Resets to orientation 1 from all orientation codes. It returns of new image's base64 URI or Blob.",
   "main": "build/index.js",
   "types": "./index.d.ts",
   "files": [
