@@ -1,7 +1,7 @@
 {
   "name": "exif-auto-rotate",
   "version": "0.2.0",
-  "description": "`exif-auto-rotate` is a module that helps you for applying the right orientation to JPEG images, based on its EXIF tag, automatically. It applies the right orientation to a JPEG image. Resets to orientation 1 from all orientation codes. It returns of new image's base64 URI or Blob.",
+  "description": "`exif-auto-rotate` is a module that helps you for applying the right orientation to JPEG images, based on its EXIF tag. It applies the right orientation to a JPEG image. Resets to orientation 1 from all orientation codes. It returns of new image's base64 URI or Blob.",
   "main": "build/index.js",
   "types": "./index.d.ts",
   "files": [
@@ -42,7 +42,7 @@
   "author": {
     "name": "Onur Zorluer",
     "email": "zorlueronur@gmail.com",
-    "url": "https://onurzorluer.com"
+    "url": "https://zorluer.com"
   },
   "license": "MIT",
   "homepage": "https://github.com/onurzorluer/exif-auto-rotate#readme",
@@ -52,7 +52,7 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "all-contributors-cli": "^6.16.0",
-    "babel-cli": "^6.26.0",
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.0.6",
