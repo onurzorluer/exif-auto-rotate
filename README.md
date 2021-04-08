@@ -23,42 +23,43 @@ yarn add exif-auto-rotate
 ```javascript
 import Rotator from 'exif-auto-rotate';
 
-Rotator.imageFileRotator(
-    file, //is the file of the new image that can now be uploaded.
-    outputType  // is the output type of the new image.
-    responseUriFunc,  // is the callBack function of the new image URI
-    );
-```
-## Example 
-First, wrap this resizer:
-```javascript
-const autoRotateFile = (file) => new Promise(resolve => {
-    Rotator.imageFileRotator(file, 'base64',
-    uri => {
-      resolve(uri);
-    }
-    );
-});
-```
+// sync
+Rotator.createRotatedImage(
+  file, // the file of the new image that can now be uploaded.
+  outputType  // the output type of the new image.
+  responseUriFunc,  // the callBack function of the new image URI
+);
 
-And then use it in your async function:
+// async
+Rotator.createRotatedImageAsync(
+  file, // the file of the new image that can now be uploaded.
+  outputType  // the output type of the new image.
+);
+```
+## Examples 
+
 ```javascript
-const onChange = async (event) => {
-  try {
-    const file = event.target.files[0];
-    const image = await autoRotateFile(file);
-    console.log(image);
-  } catch(err) {
-      console.log(err);
-    }
+// sync
+Rotator.createRotatedImage(file, 'base64', (uri) => {
+  console.log(uri);
+});
+
+// async
+try {
+  const file = event.target.files[0];
+  const uri = await Rotator.createRotatedImageAsync(file, 'base64');
+  console.log(uri);
+} catch(err) {
+  console.log(err);
 }
+
 ```
 
 Option | Description | Type | Required
 ------ | ----------- | ---- | --------
 `file` | Path of image file | `object` | Yes
 `outputType` | Can be either base64 or blob.(Default type is base64) | `string` | No
-`responseUriFunc` | Callback function of URI. Returns URI of rotated image's base64 or Blob format. ex: `uri => {console.log(uri)});` | `function` | Yes
+`responseUriFunc` | Callback function of URI. Returns URI of rotated image's base64 or Blob format. ex: `uri => {console.log(uri)});` | `function` | Yes (sync only)
 
 
 ## License
