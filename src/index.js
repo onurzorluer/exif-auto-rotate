@@ -3,6 +3,11 @@
 * @author Onur Zorluer
 *
 */
+
+function throwError(msg) {
+    throw Error(msg);
+}
+
 class Rotator {
 
     static rotateImage(image, srcOrientation) {
@@ -95,13 +100,13 @@ class Rotator {
         reader.readAsArrayBuffer(file.slice(0, 64 * 1024));
       };
 
-    static createRotatedImage(file, outputType = 'base64', responseUriFunc) {
+    static createRotatedImage(file, outputType = 'base64', responseUriFunc, errorHandler = throwError) {
         var blob = null
         var rotatedDataUrl = null
         const reader = new FileReader();
         if(file) {
             if(file.type && !file.type.includes("image")) {
-                throw Error("File Is NOT Image!");
+                errorHandler("File Is NOT Image!");
               } else {           
                 reader.readAsDataURL(file);
                 reader.onload = () => {
@@ -114,9 +119,9 @@ class Rotator {
                     }; 
                 function rotatorFunction(imageOrientation, image) {
                     if(imageOrientation == -2) {
-                        throw Error("Image Is NOT JPEG!");
+                        errorHandler("Image Is NOT JPEG!");
                     } else if(imageOrientation == -1) {
-                        throw Error("Not Defined!");
+                        errorHandler("Not Defined!");
                     }
                     rotatedDataUrl = Rotator.rotateImage(image, imageOrientation);
                     blob = Rotator.b64toBlob(rotatedDataUrl);
@@ -127,16 +132,26 @@ class Rotator {
                     }   
                 };
                 reader.onerror = error => {
-                    throw Error(error);
+                    errorHandler(error);
                 }; 
             }
         } else {
-            throw Error("File Not Found!");
+            errorHandler("File Not Found!");
           }
+    }
+
+    static createRotatedImageAsync(file, outputType = 'base64') {
+        return new Promise((resolve, reject) => {
+            Rotator.createRotatedImage(file, outputType, resolve, reject);
+        });
     }
 }   
 
-export default { createRotatedImage: (file, outputType, responseUriFunc) => {
+export default {
+    createRotatedImage: (file, outputType, responseUriFunc) => {
         return Rotator.createRotatedImage(file, outputType, responseUriFunc)
-    } 
+    },
+    createRotatedImageAsync: (file, outputType) => {
+        return Rotator.createRotatedImageAsync(file, outputType);
+    }
 }
