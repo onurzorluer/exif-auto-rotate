@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "pabs97",
+      "name": "Pablo Suarez",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4089816?v=4",
+      "profile": "https://github.com/pabs97",
+      "contributions": [
+        "maintenance",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "exif-auto-rotate",
+  "projectOwner": "onurzorluer",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

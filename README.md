@@ -1,4 +1,7 @@
 # Exif Auto Rotate
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Build Status](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)
 
@@ -69,3 +72,16 @@ Option | Description | Type | Required
 ## Contributors
 
 Contributions of any kind welcome!
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/pabs97"><img src="https://avatars.githubusercontent.com/u/4089816?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Pablo Suarez</b></sub></a><br /><a href="#maintenance-pabs97" title="Maintenance">🚧</a> <a href="https://github.com/onurzorluer/exif-auto-rotate/commits?author=pabs97" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
