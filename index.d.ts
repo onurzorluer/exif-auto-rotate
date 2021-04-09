@@ -15,9 +15,20 @@ declare module "exif-auto-rotate" {
 
     static createRotatedImage(
       file: Blob,
-      outputType: string,
+      outputType: 'blob',
       responseUriFunc: (
-        value: string | Blob | ProgressEvent<FileReader>
+        value: Blob | ProgressEvent<FileReader>
+      ) => void,
+      errorHandler: (
+        reason?: any
+      ) => void
+    ): void;
+
+    static createRotatedImage(
+      file: Blob,
+      outputType: 'base64',
+      responseUriFunc: (
+        value: string | ProgressEvent<FileReader>
       ) => void,
       errorHandler: (
         reason?: any
@@ -26,8 +37,13 @@ declare module "exif-auto-rotate" {
 
     static createRotatedImageAsync(
       file: Blob,
-      outputType: string,
-    ): Promise<Blob | string>;
+      outputType: 'blob',
+    ): Promise<Blob>;
+
+    static createRotatedImageAsync(
+        file: Blob,
+        outputType?: 'base64',
+    ): Promise<string>;
   }
 
   const ImageRotator: { createRotatedImage: typeof Rotator.createRotatedImage, createRotatedImageAsync: typeof Rotator.createRotatedImageAsync };
