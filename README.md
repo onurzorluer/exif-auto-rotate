@@ -1,11 +1,14 @@
 # Exif Auto Rotate
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Build Status](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)
 
-`exif-auto-rotate` is a module that helps you for applying the right orientation to JPEG images, based on its EXIF tag, automatically.
+`exif-auto-rotate` is a module that helps you for applying the right orientation to JPEG images, based on its EXIF tag.
 
 - Resets to orientation 1 from all orientation codes. It returns of new image's base64 URI or Blob.
 - The URI can be used as the source of an `<Image>` component.
@@ -13,10 +16,13 @@
 ## Setup
 
 Install the package:
+
 ```
 npm i exif-auto-rotate
 ```
+
 or
+
 ```
 yarn add exif-auto-rotate
 ```
@@ -39,31 +45,30 @@ Rotator.createRotatedImageAsync(
   outputType  // the output type of the new image.
 );
 ```
-## Examples 
+
+## Examples
 
 ```javascript
 // sync
-Rotator.createRotatedImage(file, 'base64', (uri) => {
+Rotator.createRotatedImage(file, "base64", (uri) => {
   console.log(uri);
 });
 
 // async
 try {
   const file = event.target.files[0];
-  const uri = await Rotator.createRotatedImageAsync(file, 'base64');
+  const uri = await Rotator.createRotatedImageAsync(file, "base64");
   console.log(uri);
-} catch(err) {
+} catch (err) {
   console.log(err);
 }
-
 ```
 
-Option | Description | Type | Required
------- | ----------- | ---- | --------
-`file` | Path of image file | `object` | Yes
-`outputType` | Can be either base64 or blob.(Default type is base64) | `string` | No
-`responseUriFunc` | Callback function of URI. Returns URI of rotated image's base64 or Blob format. ex: `uri => {console.log(uri)});` | `function` | Yes (sync only)
-
+| Option            | Description                                                                                                       | Type       | Required        |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------- | ---------- | --------------- |
+| `file`            | Path of image file                                                                                                | `object`   | Yes             |
+| `outputType`      | Can be either base64 or blob.(Default type is base64)                                                             | `string`   | No              |
+| `responseUriFunc` | Callback function of URI. Returns URI of rotated image's base64 or Blob format. ex: `uri => {console.log(uri)});` | `function` | Yes (sync only) |
 
 ## License
 
@@ -72,6 +77,7 @@ Option | Description | Type | Required
 ## Contributors
 
 Contributions of any kind welcome!
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->

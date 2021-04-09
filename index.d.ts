@@ -4,7 +4,7 @@ declare module "exif-auto-rotate" {
     static RotateImage(
       image: HTMLImageElement,
       srcOrientation: number
-    ): string;
+    ): string | Blob;
 
     static b64toBlob(b64Data: string): Blob;
     
@@ -13,16 +13,28 @@ declare module "exif-auto-rotate" {
       callback: Function
       ): void;
 
+    static throwError(
+      msg: string
+    ): void;
+
     static createRotatedImage(
       file: Blob,
       outputType: string,
       responseUriFunc: (
         value: string | Blob | ProgressEvent<FileReader>
+      ) => void,
+      errorHandler: (
+        reason?: any
       ) => void
     ): void;
+
+    static createRotatedImageAsync(
+      file: Blob,
+      outputType: string,
+    ): Promise<Blob | string>;
   }
 
-  const ImageRotator: { createRotatedImage: typeof Rotator.createRotatedImage };
+  const ImageRotator: { createRotatedImage: typeof Rotator.createRotatedImage, createRotatedImageAsync: typeof Rotator.createRotatedImageAsync };
 
   export default ImageRotator;
 }

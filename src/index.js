@@ -4,16 +4,11 @@
 *
 */
 
-function throwError(msg) {
-    throw Error(msg);
-}
-
 class Rotator {
 
     static rotateImage(image, srcOrientation) {
         var width = image.width,
         height = image.height,
-        sourceBase64 = image.src,
         canvas = document.createElement('canvas'),
         ctx = canvas.getContext("2d");
 
@@ -100,13 +95,17 @@ class Rotator {
         reader.readAsArrayBuffer(file.slice(0, 64 * 1024));
       };
 
+    static throwError(msg) {
+        throw Error(msg);
+    }
+
     static createRotatedImage(file, outputType = 'base64', responseUriFunc, errorHandler = throwError) {
         var blob = null
         var rotatedDataUrl = null
         const reader = new FileReader();
         if(file) {
             if(file.type && !file.type.includes("image")) {
-                errorHandler("File Is NOT Image!");
+                errorHandler("File Is NOT Image");
               } else {           
                 reader.readAsDataURL(file);
                 reader.onload = () => {
@@ -119,9 +118,9 @@ class Rotator {
                     }; 
                 function rotatorFunction(imageOrientation, image) {
                     if(imageOrientation == -2) {
-                        errorHandler("Image Is NOT JPEG!");
+                        errorHandler("Image is NOT JPEG");
                     } else if(imageOrientation == -1) {
-                        errorHandler("Not Defined!");
+                        errorHandler("Image is NOT have a exif code");
                     }
                     rotatedDataUrl = Rotator.rotateImage(image, imageOrientation);
                     blob = Rotator.b64toBlob(rotatedDataUrl);
