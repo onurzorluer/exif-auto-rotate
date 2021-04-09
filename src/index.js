@@ -4,6 +4,9 @@
 *
 */
 
+function throwError(msg) {
+    throw Error(msg);
+}
 class Rotator {
 
     static rotateImage(image, srcOrientation) {
@@ -95,9 +98,7 @@ class Rotator {
         reader.readAsArrayBuffer(file.slice(0, 64 * 1024));
       };
 
-    static throwError(msg) {
-        throw Error(msg);
-    }
+
 
     static createRotatedImage(file, outputType = 'base64', responseUriFunc, errorHandler = throwError) {
         var blob = null

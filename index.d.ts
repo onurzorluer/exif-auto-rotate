@@ -13,10 +13,6 @@ declare module "exif-auto-rotate" {
       callback: Function
       ): void;
 
-    static throwError(
-      msg: string
-    ): void;
-
     static createRotatedImage(
       file: Blob,
       outputType: string,
