@@ -57,7 +57,7 @@ Rotator.createRotatedImage(file, "base64", (uri) => {
 // async
 try {
   const file = event.target.files[0];
-  const uri = await Rotator.createRotatedImageAsync(file, "base64");
+  const uri = Rotator.createRotatedImageAsync(file, "base64");
   console.log(uri);
 } catch (err) {
   console.log(err);
