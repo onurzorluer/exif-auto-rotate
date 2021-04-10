@@ -14,6 +14,16 @@
         "maintenance",
         "code"
       ]
+    },
+    {
+      "login": "StephanBijzitter",
+      "name": "Stephan Bijzitter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1649903?v=4",
+      "profile": "https://github.com/StephanBijzitter",
+      "contributions": [
+        "maintenance",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
