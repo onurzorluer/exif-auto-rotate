@@ -2,7 +2,7 @@
 *
 * @author Onur Zorluer
 *
-*/
+**/
 
 function throwError(msg) {
     throw Error(msg);
