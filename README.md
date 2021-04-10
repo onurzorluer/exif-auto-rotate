@@ -1,9 +1,7 @@
 # Exif Auto Rotate
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Build Status](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)](https://travis-ci.org/onurzorluer/exif-auto-rotate.svg?branch=master)
@@ -84,6 +82,7 @@ Contributions of any kind welcome!
 <table>
   <tr>
     <td align="center"><a href="https://github.com/pabs97"><img src="https://avatars.githubusercontent.com/u/4089816?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Pablo Suarez</b></sub></a><br /><a href="#maintenance-pabs97" title="Maintenance">🚧</a> <a href="https://github.com/onurzorluer/exif-auto-rotate/commits?author=pabs97" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/StephanBijzitter"><img src="https://avatars.githubusercontent.com/u/1649903?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Stephan Bijzitter</b></sub></a><br /><a href="#maintenance-StephanBijzitter" title="Maintenance">🚧</a> <a href="https://github.com/onurzorluer/exif-auto-rotate/commits?author=StephanBijzitter" title="Code">💻</a></td>
   </tr>
 </table>
 
